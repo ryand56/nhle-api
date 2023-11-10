@@ -1,12 +1,17 @@
+import { APIWebFetchFunction, APIWebEndpoint } from "../types";
+
 const apiBaseUrl = "https://api.nhle.com/v1";
 const apiWebBaseUrl = "https://api-web.nhle.com/v1";
 
-export const _apiWebFetch = async (
-    endpoint: string,
+/** @internal */
+export const _apiWebFetch: APIWebFetchFunction = async (
+    endpoint: APIWebEndpoint | string,
     options?: Parameters<typeof fetch>[1]
 ) => {
     try {
-        const res = await fetch(`${apiWebBaseUrl}/${endpoint}`, options);
+        const url = `${apiWebBaseUrl}/${endpoint}`;
+        console.log(url);
+        const res = await fetch(url, options);
         if (!res.ok) {
             throw new Error(`Error from NHLe Web API: ${res.status} - ${res.statusText}`);
         }
