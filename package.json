@@ -12,6 +12,7 @@
   "devDependencies": {
     "@types/node": "^20.9.0",
     "typedoc": "^0.25.3",
+    "typedoc-plugin-missing-exports": "^2.1.0",
     "typescript": "^5.2.2"
   }
 }

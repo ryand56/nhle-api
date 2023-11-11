@@ -11,6 +11,9 @@ devDependencies:
   typedoc:
     specifier: ^0.25.3
     version: 0.25.3(typescript@5.2.2)
+  typedoc-plugin-missing-exports:
+    specifier: ^2.1.0
+    version: 2.1.0(typedoc@0.25.3)
   typescript:
     specifier: ^5.2.2
     version: 5.2.2
@@ -65,6 +68,14 @@ packages:
       jsonc-parser: 3.2.0
       vscode-oniguruma: 1.7.0
       vscode-textmate: 8.0.0
+    dev: true
+
+  /typedoc-plugin-missing-exports@2.1.0(typedoc@0.25.3):
+    resolution: {integrity: sha512-+1DhqZCEu7Vu5APnrqpPwl31D+hXpt1fV0Le9ycCRL1eLVdatdl6KVt4SEVwPxnEpKwgOn2dNX6I9+0F1aO2aA==}
+    peerDependencies:
+      typedoc: 0.24.x || 0.25.x
+    dependencies:
+      typedoc: 0.25.3(typescript@5.2.2)
     dev: true
 
   /typedoc@0.25.3(typescript@5.2.2):

@@ -1,3 +1,3 @@
-export interface IOddsPartners {
+export interface IOddsPartner {
     partnerId: number;
 }
