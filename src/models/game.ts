@@ -1,5 +1,6 @@
-import { GameScheduleState, GameState, IDisplayName, IGame, IGameClock, IGameTeam, IPeriodDescriptor, ITVBroadcast } from "../types";
+import { GameScheduleState, GameState, IDisplayName, IAPIScore, IGame, IGameClock, IGameGoal, IGameTeam, IPeriodDescriptor, ITVBroadcast } from "../types";
 import { _apiWebFetch } from "../rest/fetch";
+import { getScores } from "../score";
 
 class Game implements IGame {
     id: number;
@@ -21,6 +22,7 @@ class Game implements IGame {
     period?: number;
     periodDescriptor: IPeriodDescriptor;
     gameCenterLink: string;
+    goals?: IGameGoal[];
 
     constructor(game: IGame) {
         this.id = game.id;
@@ -44,7 +46,8 @@ class Game implements IGame {
         this.gameCenterLink = game.gameCenterLink;
     }
 
-    getBoxscore() {
+    /** Different results are returned, when compared to the {@link IAPIScore.games} property in {@link getScores} */
+    async getBoxscore() {
 
     }
 }

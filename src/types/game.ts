@@ -1,10 +1,13 @@
 import { DisplayNameFrench, DisplayNameSpanish, IDisplayName } from "./display";
 import { ITVBroadcast } from "./broadcast";
+import Game from "../models/game";
 
 export enum GameState {
     SCHEDULED = "FUT",
     PREGAME = "PRE",
     LIVE = "LIVE",
+    LIVE_CRITICAL = "CRIT",
+    GAME_OVER = "FINAL",
     FINAL = "OFF"
 }
 
@@ -40,7 +43,7 @@ export interface IGameWeekDay {
     date: string;
     dayAbbrev: string;
     numberOfGames: number;
-    games?: IGame[];
+    games?: Game[];
 }
 
 export interface IGameTeam {

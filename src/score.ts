@@ -12,6 +12,10 @@ export const getScores = async (date?: Date): Promise<IAPIScore> => {
     try {
         const apiEndpoint = !date ? APIWebEndpoint.SCORE_NOW : `score/${date.toLocaleDateString("en-CA")}`;
         const data: IAPIScore = await _apiWebFetch(apiEndpoint);
+        
+        const games = data.games.map(rawGame => new Game(rawGame));
+        data.games = games;
+
         return data;
     } catch (err) {
         throw new Error("NHLe API Scores fetch failed");

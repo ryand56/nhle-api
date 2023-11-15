@@ -3,11 +3,11 @@ import { IOddsPartner } from "./betting";
 import { IStandingsTeam } from "./team";
 import Game from "../models/game";
 
-export type APIFetchFunction = {
+export interface IAPIFetchFunction {
     (endpoint: string, options?: Parameters<typeof fetch>[1]): Promise<any>;
 }
 
-export type APIWebFetchFunction = APIFetchFunction & {
+export type APIWebFetchFunction = IAPIFetchFunction & {
     (endpoint: APIWebEndpoint.SCORE_NOW, options?: Parameters<typeof fetch>[1]): Promise<IAPIScore>;
     (endpoint: APIWebEndpoint.SCHEDULE_NOW, options?: Parameters<typeof fetch>[1]): Promise<IAPISchedule>;
     (endpoint: APIWebEndpoint.STANDINGS_NOW, options?: Parameters<typeof fetch>[1]): Promise<any>;
