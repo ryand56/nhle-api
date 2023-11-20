@@ -2,11 +2,15 @@ export interface IDisplayName {
     default: string;
 }
 
-export type DisplayNameFrench = IDisplayName & {
+export type DisplayName = IDisplayName & {
+    /** French */
     fr?: string;
-}
 
-/** Not sure if this is Spanish? */
-export type DisplayNameSpanish = IDisplayName & {
+    /** Spanish */
     es?: string;
+
+    cs?: string;
+    fi?: string;
+    sk?: string;
+    sv?: string;
 }
