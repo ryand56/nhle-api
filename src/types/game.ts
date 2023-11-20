@@ -1,4 +1,4 @@
-import { DisplayNameFrench, DisplayNameSpanish, IDisplayName } from "./display";
+import { IDisplayName, DisplayName } from "./display";
 import { ITVBroadcast } from "./broadcast";
 import Game from "../models/game";
 
@@ -48,8 +48,8 @@ export interface IGameWeekDay {
 
 export interface IGameTeam {
     id: number;
-    placeName?: DisplayNameFrench;
-    name?: DisplayNameSpanish;
+    placeName?: DisplayName;
+    name?: DisplayName;
     abbrev: string;
     logo: string;
     darkLogo?: string;

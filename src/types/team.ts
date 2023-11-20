@@ -1,4 +1,4 @@
-import { IDisplayName, DisplayNameFrench } from "./display";
+import { IDisplayName, DisplayName } from "./display";
 
 export interface IStandingsTeam {
     conferenceAbbrev: string;
@@ -72,7 +72,7 @@ export interface IStandingsTeam {
     shootoutWins: number;
     streakCode: string;
     streakCount: number;
-    teamName: DisplayNameFrench;
+    teamName: DisplayName;
     teamAbbrev: IDisplayName;
     teamLogo: string;
     ties: number;
